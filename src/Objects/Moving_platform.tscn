@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/utility_nodes/Geometry2D.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 45.0914
+height = 295.399
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -916.66, -31.1831, 0, 0, 0, 0, -938.169, -70.902, 0, 0, 0, 0, -891.152, -103.403, 0, 0, 0, 0, -852.104, -65.9853, 0, 0, 0, 0, -914.341, -32.1983 )
+}
+
+[sub_resource type="Animation" id=3]
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path2D:curve:resource_path")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0.0166656 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "straight" ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 2.0
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.99 ]
+}
+
+[node name="Moving_platform" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( -140.669, -33.1588 )
+rotation = -2.9719
+scale = Vector2( 2.15901, 1.89791 )
+collision_layer = 0
+motion/sync_to_physics = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -0.578865, -0.337189 )
+rotation = 1.37107
+scale = Vector2( 0.195084, 0.244301 )
+shape = SubResource( 1 )
+script = ExtResource( 1 )
+color = Color( 0.992157, 0.286275, 0.0117647, 1 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 1877.91, -3.34841 )
+rotation = -0.0174533
+scale = Vector2( 2.17124, 1.8839 )
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -916.66, -31.1831 )
+rotation = -2.92672
+rotate = false
+cubic_interp = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+position = Vector2( 13.0693, 0.564659 )
+remote_path = NodePath("../../../KinematicBody2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "LoopPathFollow"
+playback_process_mode = 0
+playback_speed = 0.25
+anims/LoopPathFollow = SubResource( 3 )
+anims/PingPongPathFollow = SubResource( 4 )

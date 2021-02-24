@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wv-sword.ogg-d421b4967697ee94c4ba95a1de5214b3.oggstr"
+
+[deps]
+
+source_file="res://Assets_2/ASSETS/sound and music/wv-sword.ogg"
+dest_files=[ "res://.import/wv-sword.ogg-d421b4967697ee94c4ba95a1de5214b3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

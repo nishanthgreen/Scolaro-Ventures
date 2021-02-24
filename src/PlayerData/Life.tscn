@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets_2/health/VIDA_0.png" type="Texture" id=1]
+[ext_resource path="res://Assets_2/health/VIDA_10.png" type="Texture" id=2]
+[ext_resource path="res://Assets_2/health/VIDA_0 - Cópia.png" type="Texture" id=3]
+[ext_resource path="res://src/PlayerData/Life.gd" type="Script" id=4]
+
+[node name="Life" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = 823.0
+margin_top = 7.0
+margin_right = 999.0
+margin_bottom = 17.0
+step = 5.0
+value = 100.0
+texture_under = ExtResource( 3 )
+texture_over = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

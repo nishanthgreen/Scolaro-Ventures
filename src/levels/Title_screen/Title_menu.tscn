@@ -1,0 +1,210 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://src/levels/Title_screen/PlayButton.gd" type="Script" id=1]
+[ext_resource path="res://Assets_2/Background.png" type="Texture" id=2]
+[ext_resource path="res://Assets_2/sword_in_the_stone.svg" type="Texture" id=3]
+[ext_resource path="res://Assets_2/statue.svg" type="Texture" id=4]
+[ext_resource path="res://Assets_2/traps/fireball/fireball_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=45]
+[ext_resource path="res://src/levels/Title_screen/OPtion/OptionsButton.gd" type="Script" id=46]
+[ext_resource path="res://assets/music/Swinging Pants.ogg" type="AudioStream" id=47]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=48]
+[ext_resource path="res://assets/coin/gold_1.png" type="Texture" id=49]
+[ext_resource path="res://src/levels/Title_screen/title_Panel.gd" type="Script" id=50]
+
+[sub_resource type="DynamicFont" id=1]
+size = 82
+outline_size = 7
+outline_color = Color( 0.988235, 0.745098, 0.0196078, 1 )
+font_data = ExtResource( 45 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 45 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 45 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 45 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.258824, 0.113725, 0.6, 0.623529 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 45 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 45 )
+
+[node name="Title_menu" type="Control"]
+anchor_right = 1.005
+anchor_bottom = 1.0
+margin_right = -0.119995
+margin_bottom = -2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1028.0
+margin_bottom = 599.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fireball_1" type="Sprite" parent="."]
+position = Vector2( 939.508, 120.315 )
+scale = Vector2( 0.85215, 0.863141 )
+texture = ExtResource( 5 )
+
+[node name="statue" type="Sprite" parent="."]
+position = Vector2( 126.099, 322.722 )
+scale = Vector2( 1.30936, 1.32041 )
+texture = ExtResource( 4 )
+
+[node name="sword_in_the_stone" type="Sprite" parent="."]
+position = Vector2( 723.215, 336.14 )
+scale = Vector2( 1.56864, 1.45815 )
+texture = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 3.64111
+margin_top = 2.22028
+margin_right = 1027.64
+margin_bottom = 602.22
+color = Color( 0.443137, 0.0117647, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 15.2135
+margin_top = 99.4538
+margin_right = 1107.21
+margin_bottom = 268.454
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.329412, 0.462745, 1, 1 )
+text = "scolaro VENTURES"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 307.841
+margin_top = 243.172
+margin_right = 501.841
+margin_bottom = 309.172
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0431373, 0.623529, 0.4, 1 )
+custom_colors/font_color_hover = Color( 0.968627, 0.0156863, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.909804, 0.0745098, 0.0745098, 1 )
+text = "Play"
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="."]
+margin_left = 239.184
+margin_top = 346.757
+margin_right = 574.184
+margin_bottom = 412.757
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.0431373, 0.623529, 0.4, 1 )
+custom_colors/font_color_hover = Color( 0.968627, 0.0156863, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.909804, 0.0745098, 0.0745098, 1 )
+text = "Options"
+flat = true
+script = ExtResource( 46 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShopButton" type="Button" parent="."]
+margin_left = 300.972
+margin_top = 443.986
+margin_right = 507.972
+margin_bottom = 509.986
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0431373, 0.623529, 0.4, 1 )
+custom_colors/font_color_hover = Color( 0.968627, 0.0156863, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.909804, 0.0745098, 0.0745098, 1 )
+text = "Shop"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="musictitlescreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 47 )
+volume_db = -12.117
+autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = 30.0
+margin_top = 21.0
+margin_right = 200.0
+margin_bottom = 73.0
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+margin_left = 9.2693
+margin_top = 8.0
+margin_right = 44.2693
+margin_bottom = 43.0
+texture = ExtResource( 49 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X" type="Label" parent="Panel"]
+margin_left = 47.189
+margin_top = 12.7937
+margin_right = 78.189
+margin_bottom = 42.7937
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.917647, 0.858824, 0.0627451, 1 )
+text = "x"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coinscollected" type="Label" parent="Panel"]
+margin_left = 75.5701
+margin_top = 10.7937
+margin_right = 162.57
+margin_bottom = 41.7937
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.917647, 0.858824, 0.0627451, 1 )
+text = "ffgh"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coin" parent="Panel" instance=ExtResource( 48 )]
+visible = false
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="OptionsButton" to="OptionsButton" method="_on_OptionsButton_pressed"]
+[connection signal="coin_collected" from="Panel/Coin" to="Panel" method="_on_Coin_panel_collected"]

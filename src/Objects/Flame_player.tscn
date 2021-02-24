@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets_2/blue_flame/5.png" type="Texture" id=1]
+[ext_resource path="res://Assets_2/blue_flame/4.png" type="Texture" id=2]
+[ext_resource path="res://Assets_2/blue_flame/3.png" type="Texture" id=3]
+[ext_resource path="res://Assets_2/blue_flame/6.png" type="Texture" id=4]
+[ext_resource path="res://Assets_2/blue_flame/2.png" type="Texture" id=5]
+[ext_resource path="res://Assets_2/blue_flame/1.png" type="Texture" id=6]
+[ext_resource path="res://src/Objects/Flame_player.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "fire",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 13.1586
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.73306, 9.76666 )
+
+[node name="Flame_player" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -4.73005, 0 )
+scale = Vector2( 0.0932346, 0.124929 )
+frames = SubResource( 1 )
+animation = "fire"
+flip_h = true
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="flame" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flame"]
+shape = SubResource( 3 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -1.57668, -0.735781 )
+scale = Vector2( 1.99856, 1.0946 )
+[connection signal="body_entered" from="flame" to="." method="_on_flame_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

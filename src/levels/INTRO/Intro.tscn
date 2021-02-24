@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/intro/game intro.webm" type="VideoStream" id=1]
+[ext_resource path="res://src/levels/INTRO/Intro.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1023.0
+margin_bottom = 597.0
+stream = ExtResource( 1 )
+autoplay = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ENTER" type="Label" parent="."]
+margin_left = 921.729
+margin_top = 561.946
+margin_right = 1005.73
+margin_bottom = 575.946
+text = "PRESS ESC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 937.095
+margin_top = 538.711
+margin_right = 977.095
+margin_bottom = 552.711
+text = "SKIP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]

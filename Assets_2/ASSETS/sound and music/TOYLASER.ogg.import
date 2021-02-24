@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TOYLASER.ogg-b8ddf9024b6c8c3d50cc1a8b0468be59.oggstr"
+
+[deps]
+
+source_file="res://Assets_2/ASSETS/sound and music/TOYLASER.ogg"
+dest_files=[ "res://.import/TOYLASER.ogg-b8ddf9024b6c8c3d50cc1a8b0468be59.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

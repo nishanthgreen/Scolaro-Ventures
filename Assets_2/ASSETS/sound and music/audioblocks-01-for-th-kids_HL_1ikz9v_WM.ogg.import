@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/audioblocks-01-for-th-kids_HL_1ikz9v_WM.ogg-8330930dfe5beff6f4596ee5ab0e045f.oggstr"
+
+[deps]
+
+source_file="res://Assets_2/ASSETS/sound and music/audioblocks-01-for-th-kids_HL_1ikz9v_WM.ogg"
+dest_files=[ "res://.import/audioblocks-01-for-th-kids_HL_1ikz9v_WM.ogg-8330930dfe5beff6f4596ee5ab0e045f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
