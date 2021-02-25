@@ -54,9 +54,6 @@ func _physics_process(delta: float) -> void:
 		$enemy.play()
 		$enemy_2_attack.play()
 		
-	if Input.is_action_just_pressed("Health"):
-		_velocity.x = -speed.x 
-		
 	if disable == 1:
 		$Right/right.disabled = true
 		$Left/left.disabled   = true

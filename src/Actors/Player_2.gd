@@ -97,7 +97,7 @@ func _physics_process(delta: float) -> void:
 			
 	# Player's Health damage
 	if Input.is_action_just_pressed("Health"):   # temporary
-		pass
+		life()
 	
 	# Player Healing
 	if Input.is_action_just_pressed("heal"):     # temporary
@@ -107,6 +107,10 @@ func _physics_process(delta: float) -> void:
 		$AttackArea/Right_attack.disabled = true
 		$AttackArea/Left_attack.disabled = true
 		disable = 0
+		
+	#die
+	if $AnimatedSprite.animation != "die" and die == 0:
+		get_tree().change_scene("res://src/levels/Title_screen/GameOver_lvl2.tscn")
 	#**************************************************************************** 
 	
 	
