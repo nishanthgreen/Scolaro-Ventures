@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets_2/map_2/new_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player_2.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://src/Objects/Medicine.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets_2/ASSETS/sound and music/Echo Blue Music - Dark Mysteries 1 - looped.ogg" type="AudioStream" id=16]
 [ext_resource path="res://src/Dialogbox/DialogBox2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Objects/Checkpoint.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 126.197, 13.6631 )
@@ -191,6 +192,14 @@ position = Vector2( 21890.2, 122.199 )
 [node name="Spaceship4" parent="Traps/Spaceship" instance=ExtResource( 9 )]
 position = Vector2( 22504.2, 156.067 )
 
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 18 )]
+position = Vector2( 14553, 269.919 )
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 18 )]
+position = Vector2( 6524.17, 344.307 )
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 1.7818, -7.1272 )
 tile_set = ExtResource( 1 )
@@ -266,6 +275,8 @@ shape = SubResource( 1 )
 [node name="Player_2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76.9932, 270.299 )
 speed = Vector2( 400, 1300 )
+
+[node name="LVL2_HUB" parent="." instance=ExtResource( 12 )]
 
 [node name="Witch" type="Node2D" parent="."]
 
@@ -431,8 +442,6 @@ volume_db = -0.001
 autoplay = true
 
 [node name="Control" parent="." instance=ExtResource( 17 )]
-
-[node name="LVL2_HUB" parent="." instance=ExtResource( 12 )]
 [connection signal="body_entered" from="Portal" to="Player_2" method="_on_Portal_body_entered"]
 [connection signal="body_entered" from="Traps/Spike/Spike" to="Player_2" method="_on_Spike_body_entered"]
 [connection signal="body_exited" from="Traps/Spike/Spike" to="Player_2" method="_on_Spike_body_exited"]
