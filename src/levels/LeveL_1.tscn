@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/levels/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tileset.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://src/Objects/Spring.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets_2/sword_in_the_stone.svg" type="Texture" id=12]
 [ext_resource path="res://src/Dialogbox/DialogBox1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Objects/Checkpoint.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -221,8 +222,16 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 162.405, 592.233 )
+position = Vector2( 115.405, 598.233 )
 scale = Vector2( 1.42454, 1.19753 )
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 14 )]
+position = Vector2( 13520.7, 1146.46 )
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 14 )]
+position = Vector2( 27019.8, -381.503 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 6 )
@@ -533,7 +542,7 @@ position = Vector2( 23397.6, 696.731 )
 position = Vector2( 26083.9, 755.152 )
 
 [node name="Enemyy9" parent="Enemyyy" instance=ExtResource( 6 )]
-position = Vector2( 27275.8, -511.901 )
+position = Vector2( 26318.7, -369.035 )
 
 [node name="Enemyy8" parent="Enemyyy" instance=ExtResource( 6 )]
 position = Vector2( 22367.4, -746.833 )

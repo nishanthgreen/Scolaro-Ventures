@@ -51,6 +51,10 @@ func _on_Fall19_body_entered(body: Node) -> void:
 func _on_MEDS_body_entered(body: Node) -> void:
 	heal()
 
+func _ready() -> void:
+	PlayerInfo.load_data_2()
+	global_position.x = PlayerInfo.checkpoint_pos_lvl2 + 50
+
 func _physics_process(delta: float) -> void:
 	
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0 # short jump interupt
@@ -156,7 +160,10 @@ func die() -> void:
 	$AnimatedSprite.play()
 	$player_death.play()
 
-
+func Entered_checkpoint():
+	PlayerInfo.load_data_2()
+	PlayerInfo.checkpoint_pos_lvl2 = max(PlayerInfo.checkpoint_pos_lvl2 , global_position.x)
+	PlayerInfo.save_data_2()
 
 
 

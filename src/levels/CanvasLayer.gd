@@ -20,6 +20,7 @@ func _on_Enemyy_enemy_died() -> void:
 func _ready():
 	$Coins.text = String(coins)
 	$ScoreBoard/Score.text = String(score)
+	PlayerInfo.score = score
 
 func _on_Enemy_witch_died():
 	score += 150

@@ -25,6 +25,9 @@ func _on_Spring_body_entered(body: Node) -> void:
 func _on_Portal_body_entered_lvl_0(body: Node) -> void:
 	get_tree().change_scene("res://src/levels/Title_screen/Title_menu.tscn")
 
+func _ready() -> void:
+	PlayerInfo.load_data()
+	global_position.x = PlayerInfo.checkpoint_pos_lvl1 + 100
 
 func _physics_process(delta: float) -> void:
 	
@@ -76,6 +79,10 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	out.y = -impulse
 	return out
 
+func Entered_checkpoint():
+	PlayerInfo.load_data()
+	PlayerInfo.checkpoint_pos_lvl1 = max(PlayerInfo.checkpoint_pos_lvl1 , global_position.x)
+	PlayerInfo.save_data()
 
 
 
