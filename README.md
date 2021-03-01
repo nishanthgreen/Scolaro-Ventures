@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Scolaro-Ventures
 
 
@@ -17,3 +18,6 @@ Step by step usage guide
 
 
 
+=======
+"# summa" 
+>>>>>>> d3e00d4 (first commit)
