@@ -30,8 +30,12 @@ func _on_Portal_body_entered_lvl_0(body: Node) -> void:
 	get_tree().change_scene("res://src/levels/Title_screen/Title_menu.tscn")
 
 func _ready() -> void:
-	PlayerInfo.load_data()
-	global_position.x = PlayerInfo.checkpoint_pos_lvl1 + 100
+	if PlayerInfo.Portal_status == 1:
+		PlayerInfo.load_data()
+		global_position.x = PlayerInfo.checkpoint_pos_lvl1 + 100
+	if PlayerInfo.Portal_status == 0:
+		global_position.x = 128
+		
 
 func _physics_process(delta: float) -> void:
 	

@@ -9,18 +9,18 @@ var score = 0
 var H_score = 0
 
 func score_save():
-	var score = File.new()
-	score.open("res://score",score.WRITE_READ)
-	score.store_var(H_score)
-	score.close()
+	var _score = File.new()
+	_score.open("res://score",_score.WRITE_READ)
+	_score.store_var(H_score)
+	_score.close()
 	
 func score_load():
-	var score = File.new()
-	if not score.file_exists("res://score"):
+	var _score = File.new()
+	if not _score.file_exists("res://score"):
 		return false
-	score.open("res://score",score.READ)
-	H_score = score.get_var()
-	score.close()
+	_score.open("res://score",_score.READ)
+	H_score = _score.get_var()
+	_score.close()
 	return true
 	
 func portal_save():
