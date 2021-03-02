@@ -48,6 +48,9 @@ margin_right = -10.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Dialogbox"]
 anchor_right = 1.0
@@ -66,7 +69,7 @@ __meta__ = {
 }
 
 [node name="next-indicator" type="Sprite" parent="Dialogbox"]
-position = Vector2( 748.867, 113.637 )
+position = Vector2( 750.792, 109.054 )
 scale = Vector2( 0.662, 0.511 )
 texture = ExtResource( 3 )
 

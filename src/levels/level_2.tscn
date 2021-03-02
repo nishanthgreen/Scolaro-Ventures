@@ -441,7 +441,7 @@ stream = ExtResource( 16 )
 volume_db = -0.001
 autoplay = true
 
-[node name="Control" parent="." instance=ExtResource( 17 )]
+[node name="dialog_lvl2" parent="." instance=ExtResource( 17 )]
 [connection signal="body_entered" from="Portal" to="Player_2" method="_on_Portal_body_entered"]
 [connection signal="body_entered" from="Traps/Spike/Spike" to="Player_2" method="_on_Spike_body_entered"]
 [connection signal="body_exited" from="Traps/Spike/Spike" to="Player_2" method="_on_Spike_body_exited"]

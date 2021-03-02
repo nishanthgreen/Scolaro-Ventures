@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/levels/Title_screen/PlayButton.gd" type="Script" id=1]
-[ext_resource path="res://Assets_2/Background.png" type="Texture" id=2]
+[ext_resource path="res://assets/lvl_3_background.png" type="Texture" id=2]
 [ext_resource path="res://Assets_2/sword_in_the_stone.svg" type="Texture" id=3]
 [ext_resource path="res://Assets_2/statue.svg" type="Texture" id=4]
 [ext_resource path="res://Assets_2/traps/fireball/fireball_1.png" type="Texture" id=5]
@@ -65,17 +65,17 @@ __meta__ = {
 }
 
 [node name="fireball_1" type="Sprite" parent="."]
-position = Vector2( 939.508, 120.315 )
+position = Vector2( 954.491, 172.756 )
 scale = Vector2( 0.85215, 0.863141 )
 texture = ExtResource( 5 )
 
 [node name="statue" type="Sprite" parent="."]
-position = Vector2( 126.099, 322.722 )
+position = Vector2( 124.417, 413.539 )
 scale = Vector2( 1.30936, 1.32041 )
 texture = ExtResource( 4 )
 
 [node name="sword_in_the_stone" type="Sprite" parent="."]
-position = Vector2( 723.215, 336.14 )
+position = Vector2( 815.714, 346.231 )
 scale = Vector2( 1.56864, 1.45815 )
 texture = ExtResource( 3 )
 
@@ -91,10 +91,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 15.2135
-margin_top = 99.4538
-margin_right = 1107.21
-margin_bottom = 268.454
+margin_left = 35.976
+margin_top = 155.075
+margin_right = 1127.98
+margin_bottom = 324.075
 rect_scale = Vector2( 0.75, 0.75 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.329412, 0.462745, 1, 1 )

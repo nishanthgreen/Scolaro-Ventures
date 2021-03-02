@@ -8,7 +8,7 @@
 [ext_resource path="res://src/Actors/Enemyy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/music/Retro Beat.ogg" type="AudioStream" id=8]
-[ext_resource path="res://assets/background.png" type="Texture" id=9]
+[ext_resource path="res://assets/lvl_3_background.png" type="Texture" id=9]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Objects/Spring.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets_2/sword_in_the_stone.svg" type="Texture" id=12]
@@ -205,25 +205,22 @@ max_value = 40.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.0569106, 13.8182 ), 0.0, 0.0, 0, 0, Vector2( 0.121951, -9.45454 ), 0.0, 0.0, 0, 0, Vector2( 0.174797, 9.45454 ), 0.0, 0.0, 0, 0, Vector2( 0.329268, -10.9091 ), 0.0, 0.0, 0, 0, Vector2( 0.471545, 18.9091 ), 0.0, 0.0, 0, 0, Vector2( 0.49187, -10.1818 ), 0.0, 0.0, 0, 0, Vector2( 0.634146, 10.1818 ), 0.0, 0.0, 0, 0, Vector2( 0.711382, -12.3636 ), 0.0, 0.0, 0, 0, Vector2( 0.8, 16 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
 [node name="LeveL_1" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ 653.3 ]
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-margin_left = 6.0
-margin_top = -77.0
-margin_right = 2525.0
-margin_bottom = 1289.0
+margin_left = 1.2666
+margin_top = -29.948
+margin_right = 1921.27
+margin_bottom = 1096.05
 texture = ExtResource( 9 )
-expand = true
-flip_v = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 115.405, 598.233 )
-scale = Vector2( 1.42454, 1.19753 )
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -259,6 +256,12 @@ position = Vector2( 9346.04, 1288.33 )
 
 [node name="Fall2" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 7245.79, 1312.01 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 115.405, 598.233 )
+scale = Vector2( 1.42454, 1.19753 )
+speed = Vector2( 600, 1380 )
 
 [node name="Hub" parent="." instance=ExtResource( 1 )]
 

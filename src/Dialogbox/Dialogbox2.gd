@@ -13,12 +13,14 @@ var dialog_index = 0
 var finished = false
 
 func _ready():
-	
+	if PlayerInfo.dialoglvl2 == 1:
+		return
 	load_dialog()
 	get_tree().paused = true
 
-
 func _process(delta):
+	if PlayerInfo.dialoglvl2 == 1:
+		queue_free()
 	$"next-indicator".visible = finished
 	if Input.is_action_just_pressed("ui_accept"):
 		load_dialog()
@@ -34,6 +36,7 @@ func load_dialog():
 		)#for letter by letter animation ($node, property, start_value, end_value, time_taken)
 		$Tween.start()
 	else:
+		PlayerInfo.dialoglvl2 = 1
 		queue_free()
 		get_tree().paused = false
 	dialog_index += 1

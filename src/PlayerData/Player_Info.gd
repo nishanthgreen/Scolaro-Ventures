@@ -7,6 +7,8 @@ var checkpoint_pos_lvl3 = 0
 var Portal_status = 0
 var score = 0
 var H_score = 0
+var dialoglvl1 = 0
+var dialoglvl2 = 0
 
 func score_save():
 	var _score = File.new()
