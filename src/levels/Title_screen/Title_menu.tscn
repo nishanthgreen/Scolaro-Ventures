@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/levels/Title_screen/PlayButton.gd" type="Script" id=1]
 [ext_resource path="res://Assets_2/Background.png" type="Texture" id=2]
 [ext_resource path="res://Assets_2/sword_in_the_stone.svg" type="Texture" id=3]
 [ext_resource path="res://Assets_2/statue.svg" type="Texture" id=4]
 [ext_resource path="res://Assets_2/traps/fireball/fireball_1.png" type="Texture" id=5]
+[ext_resource path="res://src/levels/Title_screen/LOADGAME.gd" type="Script" id=6]
 [ext_resource path="res://assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=45]
 [ext_resource path="res://src/levels/Title_screen/OPtion/OptionsButton.gd" type="Script" id=46]
 [ext_resource path="res://assets/music/Swinging Pants.ogg" type="AudioStream" id=47]
@@ -103,16 +104,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="."]
-margin_left = 307.841
-margin_top = 243.172
-margin_right = 501.841
-margin_bottom = 309.172
+[node name="NEWGAME" type="Button" parent="."]
+margin_left = 231.474
+margin_top = 260.143
+margin_right = 615.474
+margin_bottom = 326.143
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0431373, 0.623529, 0.4, 1 )
 custom_colors/font_color_hover = Color( 0.968627, 0.0156863, 1, 1 )
 custom_colors/font_color_pressed = Color( 0.909804, 0.0745098, 0.0745098, 1 )
-text = "Play"
+text = "NEWGAME"
 flat = true
 script = ExtResource( 1 )
 __meta__ = {
@@ -120,10 +121,10 @@ __meta__ = {
 }
 
 [node name="OptionsButton" type="Button" parent="."]
-margin_left = 239.184
-margin_top = 346.757
-margin_right = 574.184
-margin_bottom = 412.757
+margin_left = 256.155
+margin_top = 444.338
+margin_right = 591.155
+margin_bottom = 510.338
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.0431373, 0.623529, 0.4, 1 )
 custom_colors/font_color_hover = Color( 0.968627, 0.0156863, 1, 1 )
@@ -135,17 +136,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ShopButton" type="Button" parent="."]
-margin_left = 300.972
-margin_top = 443.986
-margin_right = 507.972
-margin_bottom = 509.986
+[node name="LOADGAME" type="Button" parent="."]
+margin_left = 207.634
+margin_top = 353.476
+margin_right = 647.634
+margin_bottom = 419.476
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.0431373, 0.623529, 0.4, 1 )
 custom_colors/font_color_hover = Color( 0.968627, 0.0156863, 1, 1 )
 custom_colors/font_color_pressed = Color( 0.909804, 0.0745098, 0.0745098, 1 )
-text = "Shop"
+text = "LOADGAME"
 flat = true
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -205,6 +207,7 @@ __meta__ = {
 
 [node name="Coin" parent="Panel" instance=ExtResource( 48 )]
 visible = false
-[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="NEWGAME" to="NEWGAME" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="OptionsButton" method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="LOADGAME" to="LOADGAME" method="_on_LOADGAME_pressed"]
 [connection signal="coin_collected" from="Panel/Coin" to="Panel" method="_on_Coin_panel_collected"]

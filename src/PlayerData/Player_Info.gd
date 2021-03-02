@@ -4,9 +4,25 @@ extends Node
 var checkpoint_pos_lvl1 = 0
 var checkpoint_pos_lvl2 = 0
 var checkpoint_pos_lvl3 = 0
-var Portal_status = 1
+var Portal_status = 0
 var score = 0
+var H_score = 0
 
+func score_save():
+	var score = File.new()
+	score.open("res://score",score.WRITE_READ)
+	score.store_var(H_score)
+	score.close()
+	
+func score_load():
+	var score = File.new()
+	if not score.file_exists("res://score"):
+		return false
+	score.open("res://score",score.READ)
+	H_score = score.get_var()
+	score.close()
+	return true
+	
 func portal_save():
 	var portal = File.new()
 	portal.open("res://p_status",portal.WRITE_READ)

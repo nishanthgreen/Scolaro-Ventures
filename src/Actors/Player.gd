@@ -16,6 +16,8 @@ func _on_Fall_body_entered(body: Node) -> void:
 	get_tree().change_scene("res://src/levels/Title_screen/GameOver.tscn")
 
 func _on_Portal_body_entered(body: Node) -> void:
+	PlayerInfo.Portal_status = 2
+	PlayerInfo.portal_save()
 	get_tree().change_scene("res://src/levels/level_2.tscn")
 	
 	
@@ -23,6 +25,8 @@ func _on_Spring_body_entered(body: Node) -> void:
 	_velocity.y = -spring
 	
 func _on_Portal_body_entered_lvl_0(body: Node) -> void:
+	PlayerInfo.Portal_status = 1
+	PlayerInfo.portal_save()
 	get_tree().change_scene("res://src/levels/Title_screen/Title_menu.tscn")
 
 func _ready() -> void:

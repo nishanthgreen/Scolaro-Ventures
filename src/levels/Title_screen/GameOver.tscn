@@ -1,14 +1,23 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/more fonts/KiriFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/levels/Title_screen/MainMenuButton.gd" type="Script" id=2]
 [ext_resource path="res://assets/sounds/jingles_PIZZA07.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/levels/Title_screen/RestartButton.gd" type="Script" id=4]
+[ext_resource path="res://src/levels/Title_screen/H_score.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
 outline_size = 5
 outline_color = Color( 0.203922, 0.054902, 0.917647, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -26,6 +35,7 @@ margin_left = -16.0
 margin_top = -32.0
 margin_right = -16.0
 margin_bottom = -32.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -40,23 +50,76 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="gameover" type="Label" parent="."]
 margin_left = 91.0873
-margin_top = 150.7
+margin_top = 84.1044
 margin_right = 932.087
-margin_bottom = 291.7
+margin_bottom = 234.104
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.972549, 0.564706, 0.0980392, 1 )
 text = "Game over"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+margin_left = 534.273
+margin_top = 315.432
+margin_right = 659.273
+margin_bottom = 348.432
+custom_fonts/font = SubResource( 4 )
+text = "55555"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="H_score" type="Label" parent="."]
+margin_left = 535.462
+margin_top = 360.622
+margin_right = 660.462
+margin_bottom = 393.622
+custom_fonts/font = SubResource( 4 )
+text = "55555"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score_name" type="Label" parent="."]
+margin_left = 348.757
+margin_top = 319.0
+margin_right = 506.757
+margin_bottom = 352.0
+custom_fonts/font = SubResource( 5 )
+text = "SCORE :"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="highscore" type="Label" parent="."]
+margin_left = 251.242
+margin_top = 361.811
+margin_right = 506.242
+margin_bottom = 394.811
+custom_fonts/font = SubResource( 5 )
+text = "HIGHSCORE :"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MainMenuButton" type="Button" parent="."]
-margin_left = 344.0
-margin_top = 319.0
-margin_right = 698.0
-margin_bottom = 387.0
+margin_left = 330.919
+margin_top = 430.786
+margin_right = 684.919
+margin_bottom = 498.786
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.12549, 0.835294, 0.752941, 1 )
 custom_colors/font_color_hover = Color( 0.913725, 0.941176, 0.0470588, 1 )
@@ -73,10 +136,10 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="RestartButton" type="Button" parent="."]
-margin_left = 344.325
-margin_top = 413.191
-margin_right = 700.326
-margin_bottom = 480.191
+margin_left = 337.19
+margin_top = 508.328
+margin_right = 693.191
+margin_bottom = 575.328
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.12549, 0.835294, 0.752941, 1 )
 custom_colors/font_color_hover = Color( 0.913725, 0.941176, 0.0470588, 1 )
