@@ -1,0 +1,6 @@
+explosion1 = 0 0 94 94
+explosion2 = 95 0 94 94
+explosion3 = 190 0 94 94
+explosion4 = 285 0 94 94
+explosion5 = 380 0 94 94
+explosion6 = 475 0 94 94

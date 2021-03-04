@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/melodyloops-travel-dreams.ogg-a03b411823f05ac320d170f896f500a6.oggstr"
+
+[deps]
+
+source_file="res://assets_3/music/melodyloops-travel-dreams.ogg"
+dest_files=[ "res://.import/melodyloops-travel-dreams.ogg-a03b411823f05ac320d170f896f500a6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

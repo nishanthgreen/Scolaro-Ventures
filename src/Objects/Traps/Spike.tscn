@@ -6,7 +6,7 @@
 extents = Vector2( 13, 11 )
 
 [node name="Spike" type="Area2D"]
-collision_layer = 2
+collision_layer = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.2, 0.2 )

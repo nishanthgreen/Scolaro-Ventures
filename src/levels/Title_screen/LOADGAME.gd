@@ -10,4 +10,4 @@ func _on_LOADGAME_pressed() -> void:
 	if PlayerInfo.Portal_status == 2:
 		get_tree().change_scene("res://src/levels/level_2.tscn")
 	if PlayerInfo.Portal_status == 3:
-		pass
+		get_tree().change_scene("res://src/levels/level_3.tscn")

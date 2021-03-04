@@ -1,0 +1,75 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/golem/attack/hit_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/golem/attack/hit_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/golem/attack/hit_3.png" type="Texture" id=3]
+[ext_resource path="res://assets/golem/attack/hit_4.png" type="Texture" id=4]
+[ext_resource path="res://assets/golem/attack/hit_5.png" type="Texture" id=5]
+[ext_resource path="res://assets/golem/attack/hit_6.png" type="Texture" id=6]
+[ext_resource path="res://assets/golem/die/die_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/golem/die/die_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/golem/die/die_5.png" type="Texture" id=9]
+[ext_resource path="res://assets/golem/die/die_7.png" type="Texture" id=10]
+[ext_resource path="res://assets/golem/die/die_6.png" type="Texture" id=11]
+[ext_resource path="res://assets/golem/die/die_3.png" type="Texture" id=12]
+[ext_resource path="res://assets/golem/die/die_4.png" type="Texture" id=13]
+[ext_resource path="res://src/Actors/lvl3Enemies/Enemy_A_3.gd" type="Script" id=14]
+[ext_resource path="res://assets/sounds/pepSound4.ogg" type="AudioStream" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "die",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "attack",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 129.59, 97.1075 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 110.869, 17.6261 )
+
+[node name="Enemy_A" type="KinematicBody2D"]
+position = Vector2( -20.6021, -0.964208 )
+scale = Vector2( 0.4, 0.4 )
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 14 )
+
+[node name="enemy" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.682, 0.682 )
+frames = SubResource( 1 )
+animation = "attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 29.5113, 28.9703 )
+scale = Vector2( 0.96, 1 )
+shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 20.8591, 18.1718 )
+scale = Vector2( 17.7245, 15.413 )
+process_parent = true
+physics_process_parent = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StompDetector" type="Area2D" parent="."]
+collision_layer = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
+modulate = Color( 0.345098, 0.329412, 0, 1 )
+position = Vector2( 30.8171, -90.788 )
+shape = SubResource( 3 )
+
+[node name="enemysquah" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+pitch_scale = 4.0
+[connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]

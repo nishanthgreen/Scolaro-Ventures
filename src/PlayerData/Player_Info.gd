@@ -9,6 +9,7 @@ var score = 0
 var H_score = 0
 var dialoglvl1 = 0
 var dialoglvl2 = 0
+var wave_dead = 0
 
 func score_save():
 	var _score = File.new()

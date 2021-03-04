@@ -7,6 +7,9 @@
 [ext_resource path="res://src/levels/Title_screen/H_score.gd" type="Script" id=5]
 [ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=6]
 
+
+
+
 [sub_resource type="DynamicFont" id=1]
 size = 120
 outline_size = 5

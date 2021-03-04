@@ -1,0 +1,41 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets_3/bomb-explosion-set/explosion5.png" type="Texture" id=1]
+[ext_resource path="res://assets_3/bomb-explosion-set/explosion3.png" type="Texture" id=2]
+[ext_resource path="res://assets_3/bomb-explosion-set/explosion4.png" type="Texture" id=3]
+[ext_resource path="res://assets_3/bomb-explosion-set/000_0005_crystal5.png" type="Texture" id=4]
+[ext_resource path="res://assets_3/bomb-explosion-set/explosion1.png" type="Texture" id=5]
+[ext_resource path="res://assets_3/bomb-explosion-set/explosion2.png" type="Texture" id=6]
+[ext_resource path="res://src/Objects/bomb.gd" type="Script" id=7]
+[ext_resource path="res://assets_3/music/BOMB.ogg" type="AudioStream" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 15.543
+
+[node name="bomb" type="Area2D"]
+collision_layer = 0
+script = ExtResource( 7 )
+
+[node name="explosion" type="AnimatedSprite" parent="."]
+position = Vector2( -0.00784302, -0.293617 )
+scale = Vector2( 1.18702, 1.15745 )
+frames = SubResource( 1 )
+animation = "explosion"
+speed_scale = 0.8
+
+[node name="bomb_area" type="CollisionShape2D" parent="."]
+position = Vector2( -0.95285, -2.87143 )
+shape = SubResource( 2 )
+
+[node name="bomb_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+[connection signal="body_entered" from="." to="." method="_on_bomb_body_entered"]
+[connection signal="animation_finished" from="explosion" to="." method="_on_explosion_animation_finished"]

@@ -17,7 +17,7 @@ signal heal(heal)
 func _on_Portal_body_entered(body: Node) -> void:
 	PlayerInfo.Portal_status = 3
 	PlayerInfo.portal_save()
-	get_tree().change_scene("res://src/levels/Title_screen/The_ENd.tscn")
+	get_tree().change_scene("res://src/levels/level_3.tscn")
 
 func _on_AnimatedSprite_animation_finished() -> void:
 	if $AnimatedSprite.animation == "attack":

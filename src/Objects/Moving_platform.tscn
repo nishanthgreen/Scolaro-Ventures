@@ -57,6 +57,9 @@ tracks/0/keys = {
 }
 
 [node name="Moving_platform" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( -140.669, -33.1588 )

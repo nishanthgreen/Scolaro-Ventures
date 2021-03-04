@@ -1,0 +1,137 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://src/Actors/Wave_enemies/lvl_2_Enemy_wave.gd" type="Script" id=1]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (9).png" type="Texture" id=2]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (1).png" type="Texture" id=3]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (7).png" type="Texture" id=4]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (10).png" type="Texture" id=5]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (2).png" type="Texture" id=6]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Dead/Separate sp/ad_entity_000_Dead_001.png" type="Texture" id=7]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Dead/Separate sp/ad_entity_000_Dead_003.png" type="Texture" id=8]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (6).png" type="Texture" id=9]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Dead/Separate sp/ad_entity_000_Dead_000.png" type="Texture" id=10]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (4).png" type="Texture" id=11]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Dead/Separate sp/ad_entity_000_Dead_002.png" type="Texture" id=12]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (3).png" type="Texture" id=13]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (5).png" type="Texture" id=14]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Walk/Separate sp 1/walk 1 (8).png" type="Texture" id=15]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Dead/Separate sp/ad_entity_000_Dead_005.png" type="Texture" id=16]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Dead/Separate sp/ad_entity_000_Dead_004.png" type="Texture" id=17]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Dead/Separate sp/ad_entity_000_Dead_006.png" type="Texture" id=18]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (4).png" type="Texture" id=19]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (6).png" type="Texture" id=20]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (9).png" type="Texture" id=21]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (5).png" type="Texture" id=22]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (8).png" type="Texture" id=23]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (7).png" type="Texture" id=24]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (10).png" type="Texture" id=25]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (2).png" type="Texture" id=26]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (3).png" type="Texture" id=27]
+[ext_resource path="res://assets/lvl_2_enemies/Magician Skeleton/Attack 1/Separate sp/attack 1 (1).png" type="Texture" id=28]
+[ext_resource path="res://assets/sounds/switch23.ogg" type="AudioStream" id=29]
+[ext_resource path="res://assets/sounds/powerUp2.ogg" type="AudioStream" id=30]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 21 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "attack",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16.2473, 31.0797 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 62.082, 10.7867 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 59.7738, 11.9003 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 21.3385, 15.1548 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 24.27, 22.0884 )
+
+[node name="Enemy" type="KinematicBody2D"]
+scale = Vector2( 0.861518, 1.02295 )
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="enemy" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 1 )
+animation = "attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+scale = Vector2( 3.29566, 3.69359 )
+process_parent = true
+physics_process_parent = true
+
+[node name="Right" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="right" type="CollisionShape2D" parent="Right"]
+position = Vector2( 150, 0 )
+shape = SubResource( 3 )
+
+[node name="Left" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="left" type="CollisionShape2D" parent="Left"]
+position = Vector2( -150, 0 )
+shape = SubResource( 4 )
+
+[node name="crosshair_r" type="Position2D" parent="."]
+position = Vector2( 42.2973, 8.83591 )
+
+[node name="crosshair_l" type="Position2D" parent="."]
+position = Vector2( -43.0223, 8.54738 )
+
+[node name="Freeze" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2147483664
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Freeze"]
+shape = SubResource( 5 )
+
+[node name="death" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death"]
+shape = SubResource( 6 )
+
+[node name="enemy_2_attack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+volume_db = -17.165
+
+[node name="enemy_2_death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 29 )
+[connection signal="animation_finished" from="enemy" to="." method="_on_enemy_animation_finished"]
+[connection signal="body_entered" from="Right" to="." method="_on_Right_body_entered"]
+[connection signal="body_entered" from="Left" to="." method="_on_Left_body_entered"]
+[connection signal="body_entered" from="Freeze" to="." method="_on_Freeze_body_entered"]
+[connection signal="area_entered" from="death" to="." method="_on_death_area_entered"]
