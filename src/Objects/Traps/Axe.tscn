@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets_3/double axe.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Traps/Axe.gd" type="Script" id=2]
-[ext_resource path="res://assets_3/music/Arrow_Swoosh.ogg" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 57.9728
@@ -74,10 +73,5 @@ anims/ping_pong = SubResource( 2 )
 [node name="Colliding_part" type="CollisionShape2D" parent="."]
 position = Vector2( -3.06067, -6.5429 )
 shape = SubResource( 3 )
-
-[node name="axe_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-volume_db = -17.165
-pitch_scale = 0.92
 [connection signal="body_entered" from="Killing_area" to="." method="_on_Killing_area_body_entered"]
 [connection signal="body_exited" from="Killing_area" to="." method="_on_Killing_area_body_exited"]
