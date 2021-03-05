@@ -273,7 +273,7 @@ position = Vector2( 19188.3, 384.465 )
 shape = SubResource( 1 )
 
 [node name="Player_2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 76.9932, 270.299 )
+position = Vector2( 70, 282.74 )
 speed = Vector2( 400, 1300 )
 
 [node name="LVL2_HUB" parent="." instance=ExtResource( 12 )]

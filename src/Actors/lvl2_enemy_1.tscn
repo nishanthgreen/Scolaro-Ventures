@@ -86,15 +86,15 @@ animations = [ {
 "name": "walk",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 49 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 22 ), ExtResource( 58 ), ExtResource( 40 ), ExtResource( 19 ), ExtResource( 59 ), ExtResource( 55 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "run",
-"speed": 9.0
-}, {
 "frames": [ ExtResource( 52 ), ExtResource( 43 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 20 ), ExtResource( 27 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 28 ), ExtResource( 53 ) ],
 "loop": true,
 "name": "jump",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 22 ), ExtResource( 58 ), ExtResource( 40 ), ExtResource( 19 ), ExtResource( 59 ), ExtResource( 55 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "run",
+"speed": 9.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

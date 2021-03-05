@@ -43,6 +43,11 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite.play()
 		$AnimatedSprite.flip_h = _velocity.x < 0
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
+	
+	if _velocity.x == 0:
+		$attackingArea/left_attack.disabled = true
+		$attackingArea/right_attack.disabled = true
+		$Death/CollisionShape2D.disabled = true
 
 
 

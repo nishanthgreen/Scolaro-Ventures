@@ -259,7 +259,7 @@ position = Vector2( 7245.79, 1312.01 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( 115.405, 598.233 )
+position = Vector2( 182.089, 610.289 )
 scale = Vector2( 1.42454, 1.19753 )
 
 [node name="Hub" parent="." instance=ExtResource( 5 )]
