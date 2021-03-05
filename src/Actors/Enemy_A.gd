@@ -24,12 +24,14 @@ func _physics_process(delta: float) -> void:
 	_velocity.x *= -1 if is_on_wall() else 1
 	
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
-# *************************** HIT ANIMATION ********************************
+	
+# HIT ANIMATION 
 	if _velocity.x != 0:
 		$enemy.animation = "attack"
 		$enemy.play()
 		$enemy.flip_h = _velocity.x > 0
-# *************************** MAKE ENEMY OUT FROM WORLD  *******************
+		
+# MAKE ENEMY OUT FROM WORLD  
 	if $enemy.animation == "die":
 		if $enemy.frame == 6:
 			queue_free()
