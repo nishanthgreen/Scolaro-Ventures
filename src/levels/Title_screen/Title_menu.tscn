@@ -13,9 +13,6 @@
 [ext_resource path="res://assets/coin/gold_1.png" type="Texture" id=49]
 [ext_resource path="res://src/levels/Title_screen/title_Panel.gd" type="Script" id=50]
 
-
-
-
 [sub_resource type="DynamicFont" id=1]
 size = 82
 outline_size = 7

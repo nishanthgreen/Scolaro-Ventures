@@ -1,3 +1,5 @@
+#refer player_2 
+
 extends Actor
 
 const Flame = preload("res://src/Objects/Flame_player.tscn")
@@ -61,6 +63,13 @@ func _on_bomb_body_entered(body: Node) -> void:
 func _on_MEDS_body_entered(body: Node) -> void:
 	if body.name == "Player_2":
 		heal()
+		
+func _on_Axe_kill():
+	die()
+
+func _on_Boulder_kill():
+	die()
+
 	
 func _ready() -> void:
 	PlayerInfo.load_data_3()
@@ -171,12 +180,6 @@ func die():
 	$AnimatedSprite.animation = "die"
 	$AnimatedSprite.play()
 	$player_death.play()
-
-func _on_Axe_kill():
-	die()
-
-func _on_Boulder_kill():
-	die()
 
 func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
 	var out: = linear_velocity

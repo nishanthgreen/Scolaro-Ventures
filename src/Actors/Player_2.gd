@@ -3,22 +3,24 @@ extends Actor
 const Flame = preload("res://src/Objects/Flame_player.tscn")
 
 # variabe:
-var isAttacking = false;
+var isAttacking = false; # to manage animations while attacking
 var health = 100;
 var heal = 50;
 var damage = 20;
-var disable = 0;
+var disable = 0; #disable collision_shape of player attacking 
 var die = 1
 var spike = 1
 #signals:
 signal health(health)
 signal heal(heal)
 
+#change scene lvl2-->lvl3 and saves its status
 func _on_Portal_body_entered(body: Node) -> void:
 	PlayerInfo.Portal_status = 3
 	PlayerInfo.portal_save()
 	get_tree().change_scene("res://src/levels/level_3.tscn")
 
+#change to gameover scene when player death and makes attack collision shape disabe when respected animation is over 
 func _on_AnimatedSprite_animation_finished() -> void:
 	if $AnimatedSprite.animation == "attack":
 		disable = 1
@@ -26,10 +28,12 @@ func _on_AnimatedSprite_animation_finished() -> void:
 	if $AnimatedSprite.animation == "die":
 		isAttacking = false
 		get_tree().change_scene("res://src/levels/Title_screen/GameOver_lvl2.tscn")
-		
+
+#reduces player life when player is attacked by enemy
 func _on_Death_body_entered(body: Node) -> void:
 	life()
-	
+
+# reduces life of enemy when entered into spike and keeps reducing until player stands on it
 func _on_Spike_body_entered(body: Node) -> void:
 	$player_on_spike.play()
 	spike = 1
@@ -40,22 +44,27 @@ func _on_Spike_body_entered(body: Node) -> void:
 func _on_Spike_body_exited(body: Node) -> void:
 	spike = 0
 
+#reduces life when bite by a snake
 func _on_Snake_body_entered(body: Node) -> void:
 	$snakehiss.play()
 	life()
 
+#players death when fall down or in lava
 func _on_Fall_body_entered(body: Node) -> void:
 	die()
 		
 func _on_Fall19_body_entered(body: Node) -> void:
 	die()
-	
+
+#player get healed when he get the meds
 func _on_MEDS_body_entered(body: Node) -> void:
 	heal()
 
+#load players current global position with respect to checkpoints
 func _ready() -> void:
 	PlayerInfo.load_data_2()
 	global_position.x = PlayerInfo.checkpoint_pos_lvl2 + 50
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -89,7 +98,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite.play("attack")
 		$player_attack.play()
 	
-	# Ranged Attack flame
+	# Ranged Attack flame is instanced dynamically once player pressed the respected key
 	if Input.is_action_just_pressed("fire"):
 		$flame_sound.play()
 		var flame = Flame.instance()
@@ -114,18 +123,19 @@ func _physics_process(delta: float) -> void:
 		$AttackArea/Left_attack.disabled = true
 		disable = 0
 		
-	#die
+	#gameover call in main function to avoid interuption(two signal calls happend simultaneously) during die animation
 	if $AnimatedSprite.animation != "die" and die == 0:
 		get_tree().change_scene("res://src/levels/Title_screen/GameOver_lvl2.tscn")
 	#**************************************************************************** 
 	
-	
+#refer player 1
 func get_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		-1.0 if Input.get_action_strength("jump") and is_on_floor() else 1.0
 	)
 
+#refer player 1
 func calculate_move_velocity(
 		linear_velocity: Vector2,
 		direction: Vector2,
@@ -133,7 +143,7 @@ func calculate_move_velocity(
 		is_jump_interrupted: bool
 	) -> Vector2:
 	var out: = linear_velocity
-	out.x = speed.x * direction.x * die
+	out.x = speed.x * direction.x * die  #to stop movement as soon as death occurs
 	out.y += gravity * get_physics_process_delta_time()
 	if direction.y == -1.0:
 		out.y = speed.y * direction.y * die
@@ -141,19 +151,20 @@ func calculate_move_velocity(
 		out.y = 0.0
 	return out 
 
+#to updated life bar and to call die func when life < 0
 func life() -> void:
 	health = health - damage
 	emit_signal("health",health)
 	if health <= 0:
 		die()
 
-
+#to update lifebar to increase or heal life 
 func heal() -> void:
 	health = health + heal
 	health = min(health,100)
 	emit_signal("heal",health)
 
-
+# to play players death animation
 func die() -> void:
 	die = 0
 	$CollisionShape2D.disabled = true
@@ -162,6 +173,7 @@ func die() -> void:
 	$AnimatedSprite.play()
 	$player_death.play()
 
+#to store checkpoint the player entered into game memory
 func Entered_checkpoint():
 	PlayerInfo.load_data_2()
 	PlayerInfo.checkpoint_pos_lvl2 = max(PlayerInfo.checkpoint_pos_lvl2 , global_position.x)

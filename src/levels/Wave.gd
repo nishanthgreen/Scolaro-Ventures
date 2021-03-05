@@ -38,22 +38,24 @@ func spawn():
 			add_child(skeleton)
 			skeleton.position = $Sp.position
 			
-		
 		if a == 2:
 			var giant = giant_enemy.instance()
 			yield(get_tree().create_timer(4),"timeout")
 			add_child(giant)
 			giant.position = $Sp.position
+			
 		if a == 3:
 			var armored = armored_enemy.instance()
 			yield(get_tree().create_timer(4),"timeout")
 			add_child(armored)
 			armored.position = $Sp.position
+			
 		if a == 4:
 			var witch = witch_enemy.instance()
 			yield(get_tree().create_timer(4),"timeout")
 			add_child(witch)
 			witch.position = $Sp.position
+
 	if e_count == e_limit:
 		yield(get_tree().create_timer(2),"timeout")
 		$Wait.visible = false

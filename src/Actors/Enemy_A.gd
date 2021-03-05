@@ -1,3 +1,5 @@
+#refer enemyy.gd
+
 extends "res://src/Actors/Actor.gd"
 signal enemy_A_died
 var score = 0
@@ -16,8 +18,7 @@ func _on_StompDetector_body_entered(body: PhysicsBody2D) -> void:
 	set_collision_mask_bit(1,false)
 	die()
 	
-	
-	
+
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
 	_velocity.x *= -1 if is_on_wall() else 1

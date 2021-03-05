@@ -3,29 +3,32 @@ extends "res://src/Actors/Actor.gd"
 const PROJECTILE_SCENE = preload("res://src/Objects/Fire.tscn")
 signal witch_died
 var flame
-var dir = 1
-var dead = false
-var disable = 0
+var dir = 1 #variable change direction after one attack
+var dead = false # to get enemy ia alive or dead
+var disable = 0  #variable to control enemy fire balls 
 
+#freeze enemy attacking 
 func _on_Freeze_body_entered(body: Node) -> void:
 	disable = 1
 	
-	
+#enemy die func called when enemy get attacked
 func _on_death_area_entered(area: Area2D) -> void:
 	die()
-	emit_signal("witch_died")
+	emit_signal("witch_died") # to score update
 
+#after death animation enemy completed into trash
 func _on_enemy_animation_finished() -> void:
 	if $enemy.animation == "die":
 		queue_free()
 
+#fire right side and change direction to left as soon as firing get completed
 func _on_Right_body_entered(body: Node) -> void:
 	_velocity.x = 0
 	$enemy.flip_h = true
 	dir = -1
 	projectile_fire()
 	
-	
+#fire left side and change direction to right as soon as firing get completed
 func _on_Left_body_entered(body: Node) -> void:
 	_velocity.x = 0
 	$enemy.flip_h = false
@@ -54,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		$enemy.play()
 		$enemy_2_attack.play()
 		
-	if disable == 1:
+	if disable == 1: # freeze enemy for 3 seconds 
 		$Right/right.disabled = true
 		$Left/left.disabled   = true
 		yield(get_tree().create_timer(3),"timeout")
@@ -64,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		$Right/right.disabled = false
 		$Left/left.disabled   = false
 	
-func projectile_fire():
+func projectile_fire(): # dynamically instancing the fire element when player entered in to the range
 	flame = PROJECTILE_SCENE.instance()
 	get_parent().add_child(flame)
 	if $enemy.flip_h == false:
@@ -76,7 +79,7 @@ func projectile_fire():
 	yield(get_tree().create_timer(.5),"timeout")
 	_velocity.x = speed.x * dir 
 
-
+# to enable die animation
 func die() -> void:
 	dead = true
 	_velocity.x = 0
