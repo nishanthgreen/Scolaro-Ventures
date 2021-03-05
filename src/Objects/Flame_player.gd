@@ -1,3 +1,5 @@
+#refer flame.gd
+
 extends KinematicBody2D
 
 
@@ -22,12 +24,4 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite.flip_h = true
 	else:
 		$AnimatedSprite.flip_h = false
-
-
-
-
-
-
-
-
 
