@@ -1,3 +1,5 @@
+#refer lvl_2_Enemy.gd
+
 extends "res://src/Actors/Actor.gd"
 
 const PROJECTILE_SCENE = preload("res://src/Objects/Fire.tscn")
@@ -11,26 +13,23 @@ func _on_Freeze_body_entered(body: Node) -> void:
 	disable = 1
 	
 	
-# *************************** enemy's death ************************************
 func _on_death_area_entered(area: Area2D) -> void:
 	if area.name == "AttackArea":
 		die()
 		
 
-
-# *************************** enemy's disappearance ****************************
 func _on_enemy_animation_finished() -> void:
 	if $enemy.animation == "die":
 		queue_free()
 
-# *************************** projection of fire *******************************
+
 func _on_Right_body_entered(body: Node) -> void:
 	_velocity.x = 0
 	$enemy.flip_h = true
 	dir = -1
 	projectile_fire()
 	
-# *************************** projection of fire *******************************
+
 func _on_Left_body_entered(body: Node) -> void:
 	_velocity.x = 0
 	$enemy.flip_h = false
@@ -42,7 +41,7 @@ func _ready() -> void:
 	set_physics_process(false)
 	_velocity.x = -speed.x 
 
-# *************************** movement of enemy ********************************
+
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
 	
@@ -50,13 +49,13 @@ func _physics_process(delta: float) -> void:
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 	
 	
-# *************************** WALK ANIMATION ***********************************
+
 	if _velocity.x != 0 and dead == false:
 		$enemy.animation = "walk"
 		$enemy.play()
 		$enemy.flip_h = _velocity.x > 0
 	
-# *************************** attacking of enemy *******************************
+
 	if _velocity.x == 0 and dead == false:
 		$enemy.animation = "attack"
 		$enemy.play()
@@ -72,7 +71,7 @@ func _physics_process(delta: float) -> void:
 		$Right/right.disabled = false
 		$Left/left.disabled   = false
 	
-# *************************** initialisation of projection *********************
+
 func projectile_fire():
 	flame = PROJECTILE_SCENE.instance()
 	get_parent().add_child(flame)
@@ -85,7 +84,7 @@ func projectile_fire():
 	yield(get_tree().create_timer(.5),"timeout")
 	_velocity.x = speed.x * dir 
 
-# *************************** death animation **********************************
+
 func die() -> void:
 	dead = true
 	_velocity.x = 0
@@ -93,42 +92,4 @@ func die() -> void:
 	$enemy.animation ="die"
 	$enemy.play()
 	$enemy_2_death.play()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
