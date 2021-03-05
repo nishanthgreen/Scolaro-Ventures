@@ -1,3 +1,5 @@
+#refer lvl2_enemy_1.gd
+
 extends Actor
 signal enemy_1_died
 var movement = 1
@@ -7,7 +9,7 @@ func _ready() -> void:
 	set_physics_process(false)
 	_velocity.x = -speed.x
 
-# ***************************detection of player's attack **********************
+
 func _on_Death_area_entered(area: Area2D) -> void:
 	$CollisionShape2D.disabled = true
 	_velocity.x = 0
@@ -18,7 +20,6 @@ func _on_Death_area_entered(area: Area2D) -> void:
 	emit_signal("enemy_1_died")
 
 
-# *************************** initiation of attack *****************************
 func _on_attackingArea_body_entered(body: Node) -> void:
 	movement = 0
 	if body.global_position.x < $CollisionShape2D.global_position.x:
@@ -33,7 +34,6 @@ func _on_attackingArea_body_entered(body: Node) -> void:
 	$enemy_attack.play()
 
 
-# *************************** execution of animation ***************************
 func _on_AnimatedSprite_animation_finished() -> void:
 	if $AnimatedSprite.animation == "die":
 		queue_free()
@@ -43,7 +43,6 @@ func _on_AnimatedSprite_animation_finished() -> void:
 		movement = 1
 	
 	
-# *************************** enemy's movement *********************************
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
 	if movement == 1:
@@ -56,8 +55,5 @@ func _physics_process(delta: float) -> void:
 		$attackingArea/left_attack.disabled = true
 		$attackingArea/right_attack.disabled = true
 		$Death/CollisionShape2D.disabled = true
-
-
-
 
 
