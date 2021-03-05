@@ -7,7 +7,7 @@ func _ready() -> void:
 	set_physics_process(false)
 	_velocity.x = -speed.x
 	
-#when player stomp occurs enemy die animation is called (only happen stomped o head)
+#when player stomp occurs enemy die animation is called (only happens when stomped on head)
 func _on_StompDetector_body_entered(body: PhysicsBody2D) -> void:
 	if body.global_position.y > $StompDetector.global_position.y:
 		return
@@ -22,13 +22,14 @@ func _physics_process(delta: float) -> void:
 	_velocity.x *= -1 if is_on_wall() else 1 #change direction of enemy with respect to hit on wall
 	
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
-# *************************** HIT ANIMATION ********************************
+	
+#HIT ANIMATION 
 	if _velocity.x != 0:
 		$enemy.animation = "hit"
 		$enemy.play()
 		$enemy.flip_h = _velocity.x > 0
 
-#enemy get trased when its death animation is end
+#enemy get trashed when its death animation is end
 	if $enemy.animation == "die":
 		if $enemy.frame == 7:
 			queue_free()
@@ -41,12 +42,4 @@ func die() -> void:
 	$soundsquash.play()
 	$enemy.play()
 	set_collision_mask_bit(0,false)
-
-
-
-
-
-
-
-
 
