@@ -39,7 +39,7 @@ func _on_AnimatedSprite_animation_finished() -> void:
 		_velocity.x = speed.x * dir
 		movement = 1
 
-
+#player's movement
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
 	if movement == 1:
@@ -53,8 +53,4 @@ func _physics_process(delta: float) -> void:
 		$attackingArea/left_attack.disabled = true
 		$attackingArea/right_attack.disabled = true
 		$Death/CollisionShape2D.disabled = true
-
-
-
-
 
