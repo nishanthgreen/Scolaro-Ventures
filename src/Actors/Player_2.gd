@@ -126,7 +126,6 @@ func _physics_process(delta: float) -> void:
 	#gameover call in main function to avoid interuption(two signal calls happend simultaneously) during die animation
 	if $AnimatedSprite.animation != "die" and die == 0:
 		get_tree().change_scene("res://src/levels/Title_screen/GameOver_lvl2.tscn")
-	#**************************************************************************** 
 	
 #refer player 1
 func get_direction() -> Vector2:
