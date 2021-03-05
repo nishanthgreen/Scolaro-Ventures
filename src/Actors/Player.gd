@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		
 	if _velocity.x == 0:
 		$AnimatedSprite.stop()
-	#**************************************************************************** 
+	
 	
 #To get direction(right,left,up) with key pressed 
 func get_direction() -> Vector2:
@@ -98,36 +98,4 @@ func Entered_checkpoint():
 	PlayerInfo.load_data()
 	PlayerInfo.checkpoint_pos_lvl1 = max(PlayerInfo.checkpoint_pos_lvl1 , global_position.x)
 	PlayerInfo.save_data()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
