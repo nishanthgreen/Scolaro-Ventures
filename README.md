@@ -1,8 +1,43 @@
 <<<<<<< HEAD
 # Scolaro-Ventures
 
+This is a 2D platformer RPG game developed using Godot in GDScript. 
 
-Explain the summary of the Game (As described in Youtube)
+## Developed by:
+
+* Lakshmi Narayanan S
+* Srinishanth R
+* Kamali S
+
+## Thanks to:
+
+* Mr. Pragash durai (our mentor)
+* Mr. Parameshwaran
+
+## Specifications:
+
+64 bit Windows.
+
+## About the game
+
+The story revolves around a school boy, who gets transfered to an unkown world where he faces many dangers, overcoming
+obstacles as well as trying to find a way to get back home.
+
+There are 4 levels in the game,
+* Level 0 
+* Level 1
+* Level 2
+* Level 3
+
+
+### Level 0
+
+It is an introductory level, to get you familiarize with the KEYS.
+
+### Level 1
+
+
+
 
 
 Gameplay Video and Gameplay Snapshots
@@ -21,3 +56,4 @@ Step by step usage guide
 =======
 "# summa" 
 >>>>>>> d3e00d4 (first commit)
+ 
