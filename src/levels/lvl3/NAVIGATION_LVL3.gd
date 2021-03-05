@@ -19,7 +19,6 @@ func _on_Enemyy_enemy_died() -> void:
 
 func _ready():
 	$Coins.text = String(coins)
-	PlayerInfo.score = score
 	$ScoreBoard/Score.text = String(PlayerInfo.score)
 	
 

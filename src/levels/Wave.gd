@@ -30,7 +30,7 @@ func spawn():
 		e_count += 1
 		var a = randi() % 3+1
 		
-		if a == 1:
+		if a == 0:
 			var skeleton = skeleton_enemy.instance()
 			
 			#$Spawn_rate.set_wait_time(spawn_Rate)
@@ -38,19 +38,19 @@ func spawn():
 			add_child(skeleton)
 			skeleton.position = $Sp.position
 			
-		if a == 2:
+		if a == 1:
 			var giant = giant_enemy.instance()
 			yield(get_tree().create_timer(4),"timeout")
 			add_child(giant)
 			giant.position = $Sp.position
 			
-		if a == 3:
+		if a == 2:
 			var armored = armored_enemy.instance()
 			yield(get_tree().create_timer(4),"timeout")
 			add_child(armored)
 			armored.position = $Sp.position
 			
-		if a == 4:
+		if a == 3:
 			var witch = witch_enemy.instance()
 			yield(get_tree().create_timer(4),"timeout")
 			add_child(witch)
@@ -62,6 +62,7 @@ func spawn():
 		$Go.visible = true
 		$Sprite.visible = false
 		$Right/right_wall.disabled = true
+		$Left/Left_wall.disabled = true
 		emit_signal("score")
 
 func _on_Left_area_body_exited(body):

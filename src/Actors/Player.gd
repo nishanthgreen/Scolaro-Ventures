@@ -29,6 +29,8 @@ func _on_Spring_body_entered(body: Node) -> void:
 	
 #change to lvl0 --> titlescreen
 func _on_Portal_body_entered_lvl_0(body: Node) -> void:
+	PlayerInfo.Portal_status = 1
+	PlayerInfo.portal_save()
 	get_tree().change_scene("res://src/levels/Title_screen/Title_menu.tscn")
 
 # To load players current position with respect to checkpoint
@@ -37,10 +39,10 @@ func _ready() -> void:
 	PlayerInfo.portal_load()
 	if PlayerInfo.Portal_status == 1:
 		PlayerInfo.load_data()
+		global_position.y = -500
 		global_position.x = PlayerInfo.checkpoint_pos_lvl1 + 100
-	if PlayerInfo.Portal_status == 0:
+	else:
 		global_position.x = 128
-		
 
 func _physics_process(delta: float) -> void:
 	
