@@ -3,7 +3,7 @@ extends Area2D
 
 signal coin_collected
 
-#for player detection
+#bouncing of coin when the player collects it
 func _on_Coin_body_entered(body):
 	
 	$AnimationPlayer.play("Bounce")
