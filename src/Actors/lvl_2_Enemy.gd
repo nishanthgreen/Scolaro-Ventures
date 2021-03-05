@@ -35,7 +35,7 @@ func _on_Left_body_entered(body: Node) -> void:
 	dir = 1
 	projectile_fire()
 
-	
+#to makeenemy not move in initial stages	
 func _ready() -> void:
 	set_physics_process(false)
 	_velocity.x = -speed.x 
@@ -46,7 +46,8 @@ func _physics_process(delta: float) -> void:
 	
 	_velocity.x *= -1  if is_on_wall() else 1
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
-# *************************** WALK ANIMATION ********************************
+	
+# enemy's movement based on velocity
 	if _velocity.x != 0 and dead == false:
 		$enemy.animation = "walk"
 		$enemy.play()
@@ -86,42 +87,4 @@ func die() -> void:
 	$enemy.animation ="die"
 	$enemy.play()
 	$enemy_2_death.play()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
