@@ -21,7 +21,7 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "die",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
@@ -37,7 +37,7 @@ extents = Vector2( 161.908, 36.863 )
 
 [node name="Enemy_A" type="KinematicBody2D"]
 position = Vector2( -20.6021, -0.964208 )
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.36, 0.32 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 14 )

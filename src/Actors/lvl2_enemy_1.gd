@@ -12,6 +12,7 @@ func _ready() -> void:
 func _on_Death_area_entered(area: Area2D) -> void:
 	$CollisionShape2D.disabled = true
 	_velocity.x = 0
+	_velocity.y = 0
 	$AnimatedSprite.animation = "die"
 	$AnimatedSprite.play()
 	$enemy_death.play()
@@ -53,4 +54,4 @@ func _physics_process(delta: float) -> void:
 		$attackingArea/left_attack.disabled = true
 		$attackingArea/right_attack.disabled = true
 		$Death/CollisionShape2D.disabled = true
-
+		

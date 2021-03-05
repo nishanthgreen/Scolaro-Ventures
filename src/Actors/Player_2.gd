@@ -18,6 +18,7 @@ signal heal(heal)
 func _on_Portal_body_entered(body: Node) -> void:
 	PlayerInfo.Portal_status = 3
 	PlayerInfo.portal_save()
+	PlayerInfo.current_score_save()
 	get_tree().change_scene("res://src/levels/level_3.tscn")
 
 #change to gameover scene when player death and makes attack collision shape disabe when respected animation is over 
@@ -62,6 +63,7 @@ func _on_MEDS_body_entered(body: Node) -> void:
 
 #load players current global position with respect to checkpoints
 func _ready() -> void:
+	PlayerInfo.current_score_load()
 	PlayerInfo.load_data_2()
 	global_position.x = PlayerInfo.checkpoint_pos_lvl2 + 50
 

@@ -1,7 +1,6 @@
 extends Control
 
 
-
 func _on_VideoPlayer_finished() -> void:
 	get_tree().change_scene("res://src/levels/Level_0.tscn")
 

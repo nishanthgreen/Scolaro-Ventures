@@ -12,7 +12,6 @@ func _on_StompDetector_body_entered(body: PhysicsBody2D) -> void:
 	if body.global_position.y > $StompDetector.global_position.y:
 		return
 	$StompDetector/CollisionShape2D.disabled = true
-	$CollisionShape2D.disabled = true
 	_velocity.x = 0
 	die()
 	
@@ -20,7 +19,6 @@ func _on_StompDetector_body_entered(body: PhysicsBody2D) -> void:
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
 	_velocity.x *= -1 if is_on_wall() else 1 #change direction of enemy with respect to hit on wall
-	
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 	
 #HIT ANIMATION 
@@ -35,11 +33,11 @@ func _physics_process(delta: float) -> void:
 			queue_free()
 			emit_signal("enemy_died")
 	"res://assets/sounds/pepSound4.ogg"
-
+	
 #function to play die animation
 func die() -> void:
 	$enemy.animation = "die"
 	$soundsquash.play()
 	$enemy.play()
-	set_collision_mask_bit(0,false)
+	
 

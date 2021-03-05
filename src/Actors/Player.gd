@@ -20,6 +20,7 @@ func _on_Fall_body_entered(body: Node) -> void:
 func _on_Portal_body_entered(body: Node) -> void:
 	PlayerInfo.Portal_status = 2  #to indicate player entered lvl2 and saved in game memory
 	PlayerInfo.portal_save()
+	PlayerInfo.current_score_save()
 	get_tree().change_scene("res://src/levels/level_2.tscn")
 	
 #bounce high when entered into spring
@@ -28,12 +29,11 @@ func _on_Spring_body_entered(body: Node) -> void:
 	
 #change to lvl0 --> titlescreen
 func _on_Portal_body_entered_lvl_0(body: Node) -> void:
-	PlayerInfo.Portal_status = 1 #to indicate player entered lvl1 and saved in game memory
-	PlayerInfo.portal_save()
 	get_tree().change_scene("res://src/levels/Title_screen/Title_menu.tscn")
 
 # To load players current position with respect to checkpoint
 func _ready() -> void:
+	PlayerInfo.current_score_load()
 	PlayerInfo.portal_load()
 	if PlayerInfo.Portal_status == 1:
 		PlayerInfo.load_data()

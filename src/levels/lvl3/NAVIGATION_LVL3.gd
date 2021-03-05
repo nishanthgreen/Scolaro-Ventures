@@ -10,34 +10,35 @@ func _on_coin_collected():
 
 
 func _on_Enemy_A_enemy_A_died():
-	score += 75
+	PlayerInfo.score += 75
 	_ready()
 
 func _on_Enemyy_enemy_died() -> void:
-	score += 50
+	PlayerInfo.score += 50
 	_ready()
 
 func _ready():
 	$Coins.text = String(coins)
-	$ScoreBoard/Score.text = String(score)
 	PlayerInfo.score = score
+	$ScoreBoard/Score.text = String(PlayerInfo.score)
+	
 
 func _on_Enemy_witch_died():
-	score += 150
+	PlayerInfo.score += 150
 	_ready()
 
 func _on_lvl2_enemy_1_armored_died():
-	score += 100
+	PlayerInfo.score += 100
 	_ready()
 
 func _on_Enemyy_skeleton_died():
-	score += 50
+	PlayerInfo.score += 50
 	_ready()
 
 func _on_lvl2_enemy_armored_died():
-	score += 100
+	PlayerInfo.score += 100
 	_ready()
 
 func _on_Wave_score() -> void:
-	score += 1000
+	PlayerInfo.score += 1000
 	_ready()

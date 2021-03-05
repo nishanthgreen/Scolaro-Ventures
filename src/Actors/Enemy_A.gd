@@ -13,16 +13,13 @@ func _on_StompDetector_body_entered(body: PhysicsBody2D) -> void:
 	if body.global_position.y > $StompDetector.global_position.y:
 		return 
 	$StompDetector/CollisionShape2D.disabled = true
-	$CollisionShape2D.disabled = true
 	_velocity.x = 0
-	set_collision_mask_bit(1,false)
 	die()
 	
 
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
 	_velocity.x *= -1 if is_on_wall() else 1
-	
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 	
 # HIT ANIMATION 
@@ -35,11 +32,9 @@ func _physics_process(delta: float) -> void:
 	if $enemy.animation == "die":
 		if $enemy.frame == 6:
 			queue_free()
-			emit_signal("enemy_A_died")
-	
 
 func die() -> void:
-	
+	emit_signal("enemy_A_died")
 	$enemy.animation = "die"
 	$enemy.play()
 	$enemysquah.play()

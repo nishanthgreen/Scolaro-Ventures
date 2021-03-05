@@ -20,6 +20,7 @@ signal heal(heal)
 
 func _on_Portal_body_entered(body: Node) -> void:
 	if body.name == "Player_2":
+		PlayerInfo.current_score_save()
 		get_tree().change_scene("res://src/levels/Title_screen/The_ENd.tscn")
 
 func _on_AnimatedSprite_animation_finished() -> void:
@@ -72,6 +73,7 @@ func _on_Boulder_kill():
 
 	
 func _ready() -> void:
+	PlayerInfo.current_score_load()
 	PlayerInfo.load_data_3()
 	global_position.y = 0
 	global_position.x = 70 + PlayerInfo.checkpoint_pos_lvl3

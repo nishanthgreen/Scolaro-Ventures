@@ -52,6 +52,7 @@ speed = Vector2( 400, 1000 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "hit"
+speed_scale = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.64801, 10.7516 )

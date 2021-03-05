@@ -259,7 +259,7 @@ position = Vector2( 7245.79, 1312.01 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( 182.089, 610.289 )
+position = Vector2( 18579, 590.145 )
 scale = Vector2( 1.42454, 1.19753 )
 
 [node name="Hub" parent="." instance=ExtResource( 5 )]
@@ -507,6 +507,7 @@ position = Vector2( 23.6797, -2.23193 )
 
 [node name="Enemies_A" type="Node2D" parent="."]
 position = Vector2( 1081.15, 426.614 )
+scale = Vector2( 0.999618, 1.0055 )
 
 [node name="Enemy_A4" parent="Enemies_A" instance=ExtResource( 8 )]
 position = Vector2( 13746.5, 1226.67 )

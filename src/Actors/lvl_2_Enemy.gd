@@ -43,7 +43,6 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
-	
 	_velocity.x *= -1  if is_on_wall() else 1
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 	
@@ -79,10 +78,12 @@ func projectile_fire(): # dynamically instancing the fire element when player en
 		flame.position = $crosshair_r.global_position
 	yield(get_tree().create_timer(.5),"timeout")
 	_velocity.x = speed.x * dir 
-
+	
+		
 # to enable die animation
 func die() -> void:
 	dead = true
+	$death/CollisionShape2D.disabled = true
 	_velocity.x = 0
 	$enemy.animation ="die"
 	$enemy.play()

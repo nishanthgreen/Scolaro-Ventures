@@ -4,7 +4,7 @@ extends KinematicBody2D
 var move = Vector2.ZERO
 var look_vec = Vector2.ZERO      #variable to calculate the position of the player
 var target = null
-export var speed = 300
+export var speed = 430
 
 #to get the current position of the moving player
 func _ready():
@@ -14,7 +14,7 @@ func _ready():
 func _physics_process(delta):
 	move = Vector2.ZERO
 	move = move.move_toward(look_vec, delta)
-	move = move.normalized() * speed *delta
+	move = move.normalized() * speed * delta
 	position += move
 
 #trash the bullet as it exits the screen
