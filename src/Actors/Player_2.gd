@@ -2,7 +2,7 @@ extends Actor
 
 const Flame = preload("res://src/Objects/Flame_player.tscn")
 
-# variabe:
+# variables
 var isAttacking = false; # to manage animations while attacking
 var health = 100;
 var heal = 50;
@@ -74,7 +74,7 @@ func _physics_process(delta: float) -> void:
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)                                    # make move function  
 	
 	
-	#*************************** Movement animation *****************************
+	# Movement animations
 	if _velocity.x != 0 and isAttacking == false:
 		$AnimatedSprite.animation = "run"
 		$AnimatedSprite.play()
@@ -178,22 +178,4 @@ func Entered_checkpoint():
 	PlayerInfo.load_data_2()
 	PlayerInfo.checkpoint_pos_lvl2 = max(PlayerInfo.checkpoint_pos_lvl2 , global_position.x)
 	PlayerInfo.save_data_2()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
