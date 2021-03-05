@@ -1,3 +1,5 @@
+#refer life.gd
+
 extends Control
 
 func _on_Player_2_health(health) -> void:
@@ -5,25 +7,4 @@ func _on_Player_2_health(health) -> void:
 
 func _on_Player_2_heal(heal) -> void:
 	$HealthBar.value = heal
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
