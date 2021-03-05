@@ -4,7 +4,7 @@ extends Actor
 
 const Flame = preload("res://src/Objects/Flame_player.tscn")
 
-# variabe:
+# variables
 var isAttacking = false;
 var health = 100;
 var heal = 50;
@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)                                    # make move function  
 	
 	
-	#*************************** Movement animation *****************************
+	# Movement animation
 	if _velocity.x != 0 and isAttacking == false:
 		$AnimatedSprite.animation = "run"
 		$AnimatedSprite.play()
@@ -136,7 +136,7 @@ func _physics_process(delta: float) -> void:
 	#die
 	if $AnimatedSprite.animation != "die" and die == 0:
 		get_tree().change_scene("res://src/levels/Title_screen/GameOver_lvl2.tscn")
-	#**************************************************************************** 
+	
 	
 	
 func get_direction() -> Vector2:
@@ -190,10 +190,4 @@ func Entered_checkpoint():
 	PlayerInfo.load_data_3()
 	PlayerInfo.checkpoint_pos_lvl3 = max(PlayerInfo.checkpoint_pos_lvl3 , global_position.x)
 	PlayerInfo.save_data_3()
-
-
-
-
-
-
 
