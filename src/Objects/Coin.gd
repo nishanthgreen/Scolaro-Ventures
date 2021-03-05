@@ -12,7 +12,7 @@ func _on_Coin_body_entered(body):
 	$soundcoincollect.play()
 	
 
-#to make coin vanish after collected
+#trash the coin after being collected
 func _on_AnimationPlayer_animation_finished(anim_name):
 	queue_free()
 
