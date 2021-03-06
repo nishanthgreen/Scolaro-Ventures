@@ -61,8 +61,8 @@ which has some unique function. Same as previous level you can get to next level
  rolling boulder, moving platform in addition to this we added an enemy wave at the end of this level.
 
 <p float="left">
- <img align = "left" src="Images/lvl3/2021-03-05-16-04-09.png" width = "475" height ="300"/>
- <img align = "right" src="Images/lvl3/2021-03-05-16-20-18.png" width = "475" height ="300"/>
+ <img align = "left" src="Images/lvl3/2021-03-05-16-04-09.png" width = "480" height ="300"/>
+ <img align = "right" src="Images/lvl3/2021-03-05-16-20-18.png" width = "480" height ="300"/>
 </p>
 
 
