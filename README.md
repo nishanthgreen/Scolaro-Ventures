@@ -6,7 +6,8 @@
 
 
 This is a 2D platformer RPG game developed using Godot game engine using GDScript. 
-Here is our game's teaser [Scolaro Ventures](https://youtu.be/U_P7O-q04tQ)
+Here is our game's teaser [Scolaro Ventures](https://youtu.be/U_P7O-q04tQ).
+You can also check out our gameplay here [Scolaro Ventures Gameplay](https://youtu.be/N4rseiIYB3Y).
 
 ## Supported platform:
 64 bit Windows.
@@ -53,8 +54,16 @@ which has some unique function. Same as previous level you can get to next level
 <img src="Images/lvl2/2021-03-05-15-59-51.png" width = "500" height ="300">
 
 ### Level 3
-This is the final level of our game, by crossing this the protagonist can get back to his home. In this level we added few new elements such as 
-rolling boulder, moving platform in addition to this we added an enemy wave at the end of this level.
+<p align="center">
+ <img  src="Images/lvl3/2021-03-05-16-04-45.png" width = "500" height ="300">
+</p>
+ This is the final level of our game, by crossing this the protagonist can get back to his home. In this level we added few new elements such as 
+ rolling boulder, moving platform in addition to this we added an enemy wave at the end of this level.
+
+<p float="left">
+ <img align = "left" src="Images/lvl3/2021-03-05-16-04-09.png" width = "450" height ="300"/>
+ <img align = "right" src="Images/lvl3/2021-03-05-16-20-18.png" width = "450" height ="300"/>
+</p>
 
 ## Dependencies
 You Should have Godot in your system, to run our project. If you don't have, you can install it from official site or you can
