@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+#refer Canvaslayer.gd
+
 var coins = 0
 
 var score = 0
