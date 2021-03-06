@@ -1,4 +1,5 @@
 # Scolaro-Ventures
+![](Images/title_screen/front_page.png
 This is a 2D platformer RPG game developed using Godot game engine using GDScript. 
 Here is our game's teaser [Scolaro Ventures](https://youtu.be/U_P7O-q04tQ)
 
