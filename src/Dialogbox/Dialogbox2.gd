@@ -1,5 +1,8 @@
 extends Control
 
+#refer dialoguebox0.gd
+
+
 var dialog_lvl2 = [
 	'Welcome to level 2.',
 	'Here, you will face more powerful enimies.',
