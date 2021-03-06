@@ -1,5 +1,8 @@
 # Scolaro-Ventures
-![](Images/title_screen/front_pannel.png)
+
+
+<img src="Images/title_screen/front_pannel.png" width = "600" height ="400">
+
 
 
 This is a 2D platformer RPG game developed using Godot game engine using GDScript. 
@@ -25,7 +28,9 @@ who wish to learn Godot can use our project either as a template or a reference 
 ### Level 0
 It is an introductory level, to get you familiarize with the KEYS.
 
-![](Images/lvl0/lvl0.png)
+<img src="Images/lvl0/lvl0.png" width = "600" height ="400">
+
+
 
 
 ### Level 1
