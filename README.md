@@ -25,6 +25,9 @@ who wish to learn Godot can use our project either as a template or a reference 
 ### Level 0
 It is an introductory level, to get you familiarize with the KEYS.
 
+![](Images/lvl0/lvl0.png)
+
+
 ### Level 1
 This is a basic level, where u can collect coins and kill enemies by jumping on them. You can get to level to by using 
 a portal, which is available at the end of this level.
