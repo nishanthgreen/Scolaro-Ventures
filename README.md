@@ -34,8 +34,14 @@ It is an introductory level, to get you familiarize with the KEYS.
 
 
 ### Level 1
+
+<img src="Images/lvl1/2021-03-05-15-55-08.png" width = "500" height ="300">
+
+
 This is a basic level, where u can collect coins and kill enemies by jumping on them. You can get to level to by using 
 a portal, which is available at the end of this level.
+
+<img src="Images/lvl1/2021-03-05-15-56-59.png" width = "500" height ="300">
 
 ### Level 2
 In this level, we added some traps to spice up the game and player can kill enemies by using sword and he can throw projectiles, 
