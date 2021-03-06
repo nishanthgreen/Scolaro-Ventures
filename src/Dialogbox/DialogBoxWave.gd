@@ -1,5 +1,8 @@
 extends Control
 
+#refer dialoguebox0.gd except for the load dialogue part which is in the last function here.
+
+
 var dialog_lvl2 = [
 	'You have done good by comming all the way here',
 	'There is an enemy wave ahead',
@@ -45,6 +48,7 @@ func load_dialog():
 func _on_Tween_tween_completed(object, key):
 	finished = true
 
+#this function called when the player enter the designated area, so that we can load the dialogue.
 
 func _on_Left_area_body_entered(body):
 	$Dialogbox.visible = true
