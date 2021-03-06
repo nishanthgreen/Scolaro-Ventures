@@ -1,5 +1,6 @@
 extends Control
 
+#refer pause.gd
  
 func _process(delta):
 	if Input.is_action_pressed("pause"):
